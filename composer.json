@@ -1,12 +1,16 @@
 {
   "name": "seebaer1976/flarum-solar-theme",
+  "description": "Solar Theme",
   "type": "flarum-extension",
   "require": {
     "flarum/core": "*"
   },
   "extra": {
     "flarum-extension": {
-      "title": "Solar Theme Ultimate"
+      "title": "Solar Theme"
     }
+  },
+  "autoload": {
+    "files": ["extend.php"]
   }
 }
