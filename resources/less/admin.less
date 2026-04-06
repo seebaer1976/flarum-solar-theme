@@ -1,48 +1,22 @@
-/* =========================
-   🧠 ADMIN BASE (SAFE)
-========================= */
-
-/* NUR Admin betreffen */
-.AdminPage {
-    background: #020617;
-    color: #e5e7eb;
+body {
+  background: #020617;
 }
 
-/* Header */
-.AdminPage .App-header {
-    background: linear-gradient(90deg, #1e3a8a, #f59e0b);
-    border-bottom: 2px solid rgba(245, 158, 11, 0.5);
+/* HEADER FIX */
+.App-header {
+  background: #ea580c;
+  border-bottom: 2px solid #f59e0b;
 }
 
-/* =========================
-   ✨ EXTENSION CARDS
-========================= */
-.AdminPage .ExtensionListItem {
+/* ADMIN UI */
+.ExtensionListItem {
     background: rgba(15, 23, 42, 0.95);
     border-radius: 14px;
-    transition: all 0.2s ease;
+    transition: 0.2s;
+    border: 1px solid rgba(30, 58, 138, 0.3);
 }
 
-/* Hover Effekt */
-.AdminPage .ExtensionListItem:hover {
+.ExtensionListItem:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
 }
-
-/* =========================
-   🔘 BUTTONS (Admin only)
-========================= */
-.AdminPage .Button {
-    border-radius: 10px;
-}
-
-/* =========================
-   🧼 FIXES (verhindert Layout-Bugs)
-========================= */
-
-/* verhindert kaputtes Layout */
-.AdminPage .App {
-    background: transparent !important;
-}
-
-/* keine globalen body overrides mehr! */

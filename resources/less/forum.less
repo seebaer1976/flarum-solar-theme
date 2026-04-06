@@ -1,40 +1,32 @@
 /* =========================
-   🌌 GLOBAL BACKGROUND (NUR FORUM!)
+   🌌 GLOBAL BACKGROUND
 ========================= */
-.IndexPage {
+body {
     background: linear-gradient(-45deg, #020617, #0f172a, #1e3a8a, #020617);
     background-size: 400% 400%;
     animation: gradientMove 30s ease infinite;
     color: #e5e7eb;
 }
 
-/* particles NUR im Forum */
-.IndexPage::before {
+/* particles */
+body::before {
     content: "";
     position: fixed;
-    inset: 0;
-    background: radial-gradient(circle, rgba(245,158,11,0.15) 1px, transparent 1px);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(245,158,11,0.12) 1px, transparent 1px);
     background-size: 40px 40px;
     animation: moveParticles 60s linear infinite;
     pointer-events: none;
 }
 
 /* =========================
-   ✨ HEADER FIXED
+   ✨ HEADER (FIXED ORANGE!)
 ========================= */
 .App-header {
-    background: linear-gradient(90deg, #ea580c, #f59e0b);
-    border-bottom: 2px solid #fbbf24;
-    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
-}
-
-/* =========================
-   🟧 HERO FIX (dein gelber Bereich)
-========================= */
-.IndexPage .hero {
-    background: #f59e0b !important;
-    border-radius: 14px;
-    padding: 20px;
+    background: #ea580c; /* FESTES ORANGE */
+    border-bottom: 2px solid #f59e0b;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
 }
 
 /* =========================
@@ -45,8 +37,12 @@
     border: none;
     color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
-    animation: pulseGlow 3s infinite;
+    transition: 0.2s;
+}
+
+.Button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
 }
 
 /* =========================
@@ -59,69 +55,23 @@
 }
 
 /* =========================
-   📦 CARDS
+   📦 CARDS (FIXED BORDER BUG)
 ========================= */
 .DiscussionListItem {
-    background: rgba(2, 6, 23, 0.7);
+    background: rgba(2, 6, 23, 0.75);
     backdrop-filter: blur(8px);
     border-radius: 14px;
     border: 1px solid rgba(30, 58, 138, 0.3);
     transition: all 0.25s ease;
-    position: relative;
-    overflow: hidden;
 }
 
 .DiscussionListItem:hover {
     transform: scale(1.01);
-    box-shadow: 0 0 40px rgba(245, 158, 11, 0.3);
-}
-
-/* animated border */
-.DiscussionListItem::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 14px;
-    padding: 1px;
-    background: linear-gradient(120deg, #1e3a8a, #f59e0b, #1e3a8a);
-    background-size: 200% 200%;
-    animation: borderGlow 6s linear infinite;
-    pointer-events: none;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
 }
 
 /* =========================
-   ❌ ADMIN STYLE ENTFERNT
-   (war dein Hauptproblem!)
-========================= */
-/* ALLES was .AdminPage / ExtensionListItem war → GELÖSCHT */
-
-/* =========================
-   ✨ ANIMATIONS
-========================= */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes moveParticles {
-    from { transform: translateY(0); }
-    to { transform: translateY(-200px); }
-}
-
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 10px rgba(245,158,11,0.3); }
-    50% { box-shadow: 0 0 25px rgba(245,158,11,0.8); }
-    100% { box-shadow: 0 0 10px rgba(245,158,11,0.3); }
-}
-
-@keyframes borderGlow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-}
-
-/* =========================
-   📊 SOLAR DASHBOARD
+   📊 DASHBOARD
 ========================= */
 .solar-dashboard {
     display: grid;
@@ -137,16 +87,29 @@
     text-align: center;
     font-weight: bold;
     border: 1px solid rgba(30, 58, 138, 0.3);
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .solar-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
 }
 
 .solar-card.glow {
-    background: linear-gradient(135deg, #1e3a8a, #f59e0b);
+    background: #ea580c;
     color: white;
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+}
+
+/* =========================
+   ✨ ANIMATIONS
+========================= */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes moveParticles {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200px); }
 }
