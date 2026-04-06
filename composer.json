@@ -1,25 +1,18 @@
 {
-  "name": "seebaer1976/flarum-solar-theme",
-  "description": "Solar Animated Theme for Flarum",
+  "name": "seebear1976/flarum-solar-theme",
   "type": "flarum-extension",
-  "license": "MIT",
   "require": {
     "flarum/core": "^1.8"
   },
   "autoload": {
     "psr-4": {
-      "Seebaer1976\\SolarTheme\\": "src/"
+      "Seebear1976\\SolarTheme\\": "src/"
     }
   },
   "extra": {
     "flarum-extension": {
       "title": "Solar Theme",
-      "category": "design",
-      "icon": {
-        "name": "fas fa-sun",
-        "backgroundColor": "#f59e0b",
-        "color": "#fff"
-      }
+      "category": "theme"
     }
   }
 }

@@ -1,13 +1,15 @@
 <?php
 
+namespace Seebear1976\SolarTheme;
+
 use Flarum\Extend;
 
 return [
     (new Extend\Frontend('forum'))
-        ->css(__DIR__.'/resources/less/forum.less')
-        ->js(__DIR__.'/resources/js/forum.js'),
+        ->js(__DIR__.'/resources/js/forum.js')
+        ->css(__DIR__.'/resources/less/forum.less'),
 
     (new Extend\Frontend('admin'))
-        ->css(__DIR__.'/resources/less/forum.less')
-        ->js(__DIR__.'/resources/js/admin.js'),
+        ->js(__DIR__.'/resources/js/admin.js')
+        ->css(__DIR__.'/resources/less/admin.less'),
 ];
