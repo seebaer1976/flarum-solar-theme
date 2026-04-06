@@ -1,28 +1,32 @@
 /* =========================
-   🌌 GLOBAL + ANIMATION
+   🌌 GLOBAL BACKGROUND
 ========================= */
 body {
     background: linear-gradient(-45deg, #020617, #0f172a, #1e3a8a, #020617);
     background-size: 400% 400%;
     animation: gradientMove 30s ease infinite;
     color: #e5e7eb;
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Animated gradient */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+/* Particles overlay */
 body::before {
     content: "";
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(245,158,11,0.15) 1px, transparent 1px);
+    inset: 0;
+    background: radial-gradient(circle, rgba(245,158,11,0.12) 1px, transparent 1px);
     background-size: 40px 40px;
-    animation: moveParticles 60s linear infinite;
+    animation: moveParticles 80s linear infinite;
     pointer-events: none;
+    z-index: 0;
 }
 
 @keyframes moveParticles {
@@ -30,28 +34,169 @@ body::before {
     to { transform: translateY(-200px); }
 }
 
-/* HEADER */
+/* =========================
+   ✨ HEADER
+========================= */
 .App-header {
     background: linear-gradient(90deg, #1e3a8a, #f59e0b);
     border-bottom: 2px solid #fbbf24;
+    box-shadow: 0 0 20px rgba(245,158,11,0.3);
+    z-index: 10;
 }
 
-/* BUTTONS */
+/* =========================
+   🔗 LINKS
+========================= */
+a {
+    color: #fbbf24;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #f59e0b;
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+/* =========================
+   🔘 BUTTONS
+========================= */
 .Button {
     background: linear-gradient(135deg, #1e3a8a, #f59e0b);
+    border: none;
+    color: white;
     border-radius: 10px;
     animation: pulseGlow 3s infinite;
+    transition: 0.2s;
 }
 
+.Button:hover {
+    transform: translateY(-2px);
+}
+
+/* Pulse Animation */
 @keyframes pulseGlow {
     0% { box-shadow: 0 0 10px rgba(245,158,11,0.3); }
     50% { box-shadow: 0 0 25px rgba(245,158,11,0.8); }
     100% { box-shadow: 0 0 10px rgba(245,158,11,0.3); }
 }
 
-/* GRID */
+/* =========================
+   📦 DISCUSSION GRID
+========================= */
 .DiscussionList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 15px;
+}
+
+/* =========================
+   💎 DISCUSSION CARDS
+========================= */
+.DiscussionListItem {
+    position: relative;
+    background: rgba(2, 6, 23, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid rgba(30, 58, 138, 0.3);
+    transition: 0.3s;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Hover Effekt */
+.DiscussionListItem:hover {
+    transform: scale(1.02);
+    border-color: #f59e0b;
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.3);
+}
+
+/* Animated Border */
+.DiscussionListItem::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 1px;
+    background: linear-gradient(120deg, #1e3a8a, #f59e0b, #1e3a8a);
+    background-size: 200% 200%;
+    animation: borderGlow 6s linear infinite;
+    z-index: -1;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* Activity Bar */
+.DiscussionListItem::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 60%;
+    background: linear-gradient(90deg, #1e3a8a, #f59e0b);
+    border-radius: 10px;
+    opacity: 0.7;
+}
+
+/* =========================
+   🏷 TAGS
+========================= */
+.TagLabel {
+    background: linear-gradient(135deg, #1e3a8a, #f59e0b);
+    color: white;
+    border-radius: 20px;
+    padding: 4px 10px;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+/* =========================
+   💬 POSTS
+========================= */
+.Post {
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 16px;
+    padding: 15px;
+    border: 1px solid rgba(30, 58, 138, 0.3);
+}
+
+/* =========================
+   🌈 HEADINGS
+========================= */
+h1, h2, h3 {
+    color: #fbbf24;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+}
+
+/* =========================
+   🖱 SCROLLBAR
+========================= */
+html {
+    scrollbar-color: #f59e0b #020617;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#1e3a8a, #f59e0b);
+    border-radius: 10px;
+}
+
+/* =========================
+   ✨ SELECTION
+========================= */
+::selection {
+    background: #f59e0b;
+    color: black;
 }
