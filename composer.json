@@ -5,12 +5,14 @@
   "require": {
     "flarum/core": "*"
   },
+  "autoload": {
+    "psr-4": {
+      "Seebaer1976\\SolarTheme\\": "src/"
+    }
+  },
   "extra": {
     "flarum-extension": {
       "title": "Solar Theme"
     }
-  },
-  "autoload": {
-    "files": ["extend.php"]
   }
 }
