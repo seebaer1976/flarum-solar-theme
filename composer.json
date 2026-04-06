@@ -1,18 +1,12 @@
 {
-  "name": "solar/theme-pro",
+  "name": "seebaer1976/flarum-solar-theme",
   "type": "flarum-extension",
-  "description": "Solar AI Dashboard Theme PRO",
   "require": {
     "flarum/core": "^1.0"
   },
-  "autoload": {
-    "psr-4": {
-      "Solar\\Theme\\": "src/"
-    }
-  },
   "extra": {
     "flarum-extension": {
-      "title": "Solar Theme PRO"
+      "title": "Solar Theme Ultimate"
     }
   }
 }
