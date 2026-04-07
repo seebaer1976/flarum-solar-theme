@@ -1,6 +1,7 @@
 import app from 'flarum/forum/app';
 import { extend } from 'flarum/common/extend';
 import IndexPage from 'flarum/forum/components/IndexPage';
+import m from 'mithril';
 
 app.initializers.add('solar-theme', () => {
 
@@ -15,16 +16,13 @@ app.initializers.add('solar-theme', () => {
     const discussions = stats.discussionsCount || 0;
     const online = Math.floor(users * 0.1);
 
-    const dashboard = (
-      <div className="solar-dashboard">
-        <div className="solar-card">👥 {users} Users</div>
-        <div className="solar-card">💬 {discussions} Topics</div>
-        <div className="solar-card">📝 {posts} Posts</div>
-        <div className="solar-card glow">🟢 {online} Online</div>
-      </div>
-    );
+    const dashboard = m('div.solar-dashboard', [
+      m('div.solar-card', `👥 ${users} Users`),
+      m('div.solar-card', `💬 ${discussions} Topics`),
+      m('div.solar-card', `📝 ${posts} Posts`),
+      m('div.solar-card.glow', `🟢 ${online} Online`)
+    ]);
 
-    // SAFELY einfügen
     if (vdom.children && Array.isArray(vdom.children)) {
       vdom.children.push(dashboard);
     }
